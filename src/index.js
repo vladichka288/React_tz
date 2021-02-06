@@ -12,14 +12,14 @@ import { createStore, compose, applyMiddleware, combineReducers } from "redux";
 const rootReducer = combineReducers({
   GroceryList: GroceryListReducer,
 });
-const composeEnhancers =
+/*const composeEnhancers =
   process.env.NODE_ENV === "development"
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    : null || compose;
+    : null || compose;*/
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(sagaMiddleware))
+  compose(applyMiddleware(sagaMiddleware))
 );
 sagaMiddleware.run(watchGroceryList);
 ReactDOM.render(
