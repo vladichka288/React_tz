@@ -1,0 +1,8 @@
+.Wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.Wrapper div {
+    padding: 0 10px;
+    border-right:1px solid black;
+}
